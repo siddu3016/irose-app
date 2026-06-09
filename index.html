@@ -1,0 +1,1846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Irose Guest House | Premium Boutique Stays in Hyderabad & Goa</title>
+  
+  <!-- SEO & Meta Tags -->
+  <meta name="description" content="Experience high-end comfort and exceptional hospitality at Irose Guest House. Featuring fully furnished corporate suites in Hyderabad and beachside flats in Goa." />
+  <meta name="keywords" content="service apartments hyderabad, corporate stays gachibowli, guest house goa, calangute rooms" />
+
+  <!-- Google Fonts (Cormorant Garamond & Plus Jakarta Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            serif: ['Cormorant Garamond', 'serif'],
+          },
+          colors: {
+            brand: {
+              50: '#fcfbf9',
+              100: '#f5f2eb',
+              200: '#e6dfd1',
+              700: '#143826',
+              800: '#0d261a',
+              900: '#07140e',
+              gold: '#c29f68',
+              goldDark: '#997640',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    /* Premium Fonts */
+    .font-serif {
+      font-family: 'Cormorant Garamond', serif;
+    }
+    .font-sans {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    /* Scrollbar Styling */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f5f2eb; /* brand-100 */
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #c29f68; /* brand-gold */
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #997640;
+    }
+
+    /* Hero overlay with rich gradient mapping */
+    .hero-overlay {
+      background: linear-gradient(180deg, rgba(7, 20, 14, 0.4) 0%, rgba(7, 20, 14, 0.6) 60%, rgba(7, 20, 14, 0.85) 100%);
+    }
+
+    /* Navbar transitions */
+    #navbar {
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    
+    /* Navbar transparent mode */
+    .navbar-transparent {
+      background-color: transparent;
+      border-color: transparent;
+      color: #ffffff;
+    }
+    .navbar-transparent #nav-logo-text { color: #ffffff; }
+    .navbar-transparent .nav-link-item { color: rgba(255, 255, 255, 0.85); }
+    .navbar-transparent .nav-link-item:hover { color: #c29f68; }
+    .navbar-transparent #nav-phone { color: #ffffff; }
+    .navbar-transparent #nav-btn {
+      background-color: transparent;
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+    }
+    .navbar-transparent #nav-btn:hover {
+      background-color: #ffffff;
+      color: #0d261a;
+      border-color: #ffffff;
+    }
+    .navbar-transparent .mobile-icon-btn {
+      border-color: rgba(255, 255, 255, 0.3);
+      color: #ffffff;
+    }
+    .navbar-transparent .mobile-icon-btn:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Navbar scrolled mode */
+    .navbar-scrolled {
+      background-color: rgba(252, 251, 249, 0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-color: rgba(230, 223, 209, 0.5); /* brand-200 */
+      box-shadow: 0 4px 20px -2px rgba(13, 38, 26, 0.06);
+      padding-top: 0.9rem;
+      padding-bottom: 0.9rem;
+      color: #1f2937;
+    }
+    .navbar-scrolled #nav-logo-text { color: #0d261a; }
+    .navbar-scrolled .nav-link-item { color: #4b5563; }
+    .navbar-scrolled .nav-link-item:hover { color: #c29f68; }
+    .navbar-scrolled #nav-phone { color: #143826; }
+    .navbar-scrolled #nav-btn {
+      background-color: #143826; /* brand-700 */
+      color: #ffffff;
+      border: 1px solid transparent;
+    }
+    .navbar-scrolled #nav-btn:hover {
+      background-color: #0d261a;
+      box-shadow: 0 4px 12px rgba(20, 56, 38, 0.15);
+    }
+    .navbar-scrolled .mobile-icon-btn {
+      border-color: #e6dfd1;
+      color: #4b5563;
+    }
+    .navbar-scrolled .mobile-icon-btn:hover {
+      background-color: #f5f2eb;
+    }
+
+    /* FAQ Collapsible Items */
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1), padding 0.35s ease-out;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+    .faq-active .faq-chevron {
+      transform: rotate(180deg);
+      color: #c29f68; /* brand-gold */
+    }
+    .faq-active {
+      border-color: #c29f68 !important;
+      box-shadow: 0 4px 12px rgba(194, 159, 104, 0.05);
+    }
+
+    /* Scroll Reveal Engine */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      filter: blur(1px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), filter 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .revealed {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+    }
+
+    /* Staggered Delays for Animations */
+    .delay-100 { transition-delay: 100ms; }
+    .delay-200 { transition-delay: 200ms; }
+    .delay-300 { transition-delay: 300ms; }
+    .delay-400 { transition-delay: 400ms; }
+
+    /* Rooms switching fade transition */
+    .rooms-container {
+      transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1), transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .rooms-container.fade-out {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+
+    /* Custom Input States */
+    .form-input-focus:focus {
+      outline: none;
+      border-color: #c29f68; /* brand-gold */
+      box-shadow: 0 0 0 3px rgba(194, 159, 104, 0.15);
+    }
+
+    /* Luxury card hover overlay */
+    .luxury-card-hover {
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .luxury-card-hover:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 30px -4px rgba(13, 38, 26, 0.08);
+      border-color: rgba(194, 159, 104, 0.3);
+    }
+
+    /* Entrance Animations on Load */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .animate-hero-fade {
+      animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    .animate-hero-delay-1 {
+      animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.25s forwards;
+      opacity: 0;
+    }
+    .animate-hero-delay-2 {
+      animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.5s forwards;
+      opacity: 0;
+    }
+    .animate-hero-delay-3 {
+      animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.75s forwards;
+      opacity: 0;
+    }
+  </style>
+</head>
+<body class="bg-brand-50 text-gray-800 font-sans selection:bg-brand-200 selection:text-brand-900 antialiased pt-0">
+
+  <!-- Toast Notification Container -->
+  <div id="toastContainer" class="fixed top-24 right-6 z-[100] flex flex-col gap-3 w-full max-w-sm pointer-events-none"></div>
+
+  <!-- Header / Navigation -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-16 py-6 transition-all duration-300 bg-transparent border-b border-transparent text-white navbar-transparent">
+    <a href="#home" class="flex items-center gap-2">
+      <span id="nav-logo-text" class="text-2xl md:text-3xl font-serif font-bold tracking-tight text-white transition-colors duration-300">
+        IROSE <span class="text-brand-gold font-sans font-light text-sm tracking-widest ml-2 uppercase">Guest House</span>
+      </span>
+    </a>
+
+    <!-- Desktop Navigation Links -->
+    <div id="nav-links" class="hidden lg:flex gap-10 text-[11px] font-bold items-center uppercase tracking-widest text-white/80 transition-colors duration-300">
+      <a href="#home" class="nav-link-item hover:text-brand-gold transition duration-300">Home</a>
+      <a href="#locations" class="nav-link-item hover:text-brand-gold transition duration-300">Locations</a>
+      <a href="#rooms" class="nav-link-item hover:text-brand-gold transition duration-300">Rooms & Rates</a>
+      <a href="#services" class="nav-link-item hover:text-brand-gold transition duration-300">Amenities</a>
+      <a href="#testimonials" class="nav-link-item hover:text-brand-gold transition duration-300">Reviews</a>
+      <a href="#faqs" class="nav-link-item hover:text-brand-gold transition duration-300">FAQs</a>
+    </div>
+
+    <div class="hidden lg:flex items-center gap-6">
+      <a id="nav-phone" href="tel:+918374661394" class="text-xs font-bold text-white flex items-center gap-2 tracking-wider transition-colors duration-300 hover:text-brand-gold">
+        <svg class="w-4 h-4 text-brand-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+        <span>+91 8374661394</span>
+      </a>
+      <button
+        id="nav-btn"
+        onclick="openBookingModal()"
+        class="bg-white text-brand-800 border border-white text-[10px] uppercase tracking-widest font-bold px-6 py-3 rounded transition-all duration-300 shadow-sm"
+      >
+        Book A Room
+      </button>
+    </div>
+
+    <!-- Mobile Navigation Trigger -->
+    <div id="nav-mobile-btns" class="lg:hidden flex items-center gap-3 text-white">
+      <a href="tel:+918374661394" class="p-2 border border-white/30 rounded-full hover:bg-white/10 text-white transition mobile-icon-btn">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+      </a>
+      <button onclick="toggleMobileMenu()" class="p-2 border border-white/30 rounded-full hover:bg-white/10 text-white transition mobile-icon-btn">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu Drawer Overlay -->
+  <div id="mobileMenuOverlay" class="fixed inset-0 bg-brand-900/60 backdrop-blur-sm z-40 transition-opacity duration-300 opacity-0 pointer-events-none lg:hidden" onclick="toggleMobileMenu()"></div>
+  
+  <!-- Mobile Menu Drawer Box -->
+  <div id="mobileMenuDrawer" class="fixed top-0 right-0 bottom-0 w-80 bg-brand-50 z-50 shadow-2xl p-8 flex flex-col justify-between transform translate-x-full transition-transform duration-300 ease-in-out lg:hidden">
+    <div>
+      <div class="flex items-center justify-between mb-8">
+        <span class="text-xl font-serif font-bold text-brand-800">
+          IROSE <span class="text-brand-gold font-sans font-light text-xs tracking-widest block uppercase mt-0.5">Guest House</span>
+        </span>
+        <button onclick="toggleMobileMenu()" class="p-2 border border-brand-200 rounded-full hover:bg-brand-100 text-gray-700 transition">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+      
+      <div class="flex flex-col gap-6 text-sm font-semibold text-gray-700 uppercase tracking-widest">
+        <a href="#home" onclick="toggleMobileMenu()" class="hover:text-brand-gold transition duration-200 flex items-center justify-between border-b border-brand-100/50 pb-2"><span>Home</span><svg class="w-4 h-4 text-brand-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></a>
+        <a href="#locations" onclick="toggleMobileMenu()" class="hover:text-brand-gold transition duration-200 flex items-center justify-between border-b border-brand-100/50 pb-2"><span>Our Locations</span><svg class="w-4 h-4 text-brand-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></a>
+        <a href="#rooms" onclick="toggleMobileMenu()" class="hover:text-brand-gold transition duration-200 flex items-center justify-between border-b border-brand-100/50 pb-2"><span>Rooms & Rates</span><svg class="w-4 h-4 text-brand-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></a>
+        <a href="#services" onclick="toggleMobileMenu()" class="hover:text-brand-gold transition duration-200 flex items-center justify-between border-b border-brand-100/50 pb-2"><span>Amenities</span><svg class="w-4 h-4 text-brand-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></a>
+        <a href="#testimonials" onclick="toggleMobileMenu()" class="hover:text-brand-gold transition duration-200 flex items-center justify-between border-b border-brand-100/50 pb-2"><span>Reviews</span><svg class="w-4 h-4 text-brand-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></a>
+        <a href="#faqs" onclick="toggleMobileMenu()" class="hover:text-brand-gold transition duration-200 flex items-center justify-between pb-2"><span>FAQs</span><svg class="w-4 h-4 text-brand-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></a>
+      </div>
+    </div>
+    
+    <div class="space-y-4">
+      <a href="tel:+918374661394" class="text-xs font-bold text-brand-800 flex items-center gap-3 tracking-wider justify-center p-3 border border-brand-200 rounded-lg bg-white shadow-sm">
+        <svg class="w-4 h-4 text-brand-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+        <span>+91 8374661394</span>
+      </a>
+      <button
+        onclick="toggleMobileMenu(); openBookingModal();"
+        class="bg-brand-700 text-white w-full py-4 rounded-lg text-xs font-bold uppercase tracking-widest hover:bg-brand-800 transition duration-300 shadow-md"
+      >
+        Book A Room
+      </button>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section
+    id="home"
+    class="relative min-h-screen flex flex-col items-center justify-center text-center px-6"
+  >
+    <!-- Background image -->
+    <img
+      src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=1600&auto=format&fit=crop"
+      alt="Irose Guest House Luxury Lobby"
+      class="absolute inset-0 w-full h-full object-cover"
+    />
+    <div class="absolute inset-0 hero-overlay"></div>
+
+    <!-- Main Hero Text Content -->
+    <div class="relative z-10 text-white max-w-4xl mx-auto pt-24 pb-20">
+      <span class="animate-hero-fade inline-block border border-brand-gold/30 text-brand-gold px-4 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase mb-6 bg-brand-900/60 backdrop-blur-sm">
+        Premium Hospitality Stays
+      </span>
+      
+      <h1 class="animate-hero-delay-1 text-5xl md:text-7xl lg:text-8xl font-serif font-bold mb-8 leading-tight tracking-tight">
+        Elegant Living Rooms in <br class="hidden md:inline" />
+        <span class="italic text-brand-gold">Hyderabad</span> & <span class="italic text-brand-gold">Goa</span>
+      </h1>
+
+      <p class="animate-hero-delay-2 text-base md:text-lg text-gray-250 font-light max-w-2xl mx-auto mb-10 leading-relaxed">
+        Experience meticulously maintained accommodations designed for modern executive stays in Hyderabad and peaceful coastal retreats in Goa.
+      </p>
+    </div>
+
+    <!-- Professional Hero Booking Bar -->
+    <div class="animate-hero-delay-3 relative z-20 w-full max-w-5xl mx-auto -mt-12 bg-white rounded-xl shadow-2xl p-4 md:p-6 border border-brand-100 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 items-end text-left">
+      <!-- Destination selection -->
+      <div class="flex flex-col gap-1.5">
+        <label class="text-[10px] font-bold text-gray-500 uppercase tracking-wider flex items-center gap-1">
+          <svg class="w-3.5 h-3.5 text-brand-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          Location
+        </label>
+        <select id="heroLocation" class="w-full bg-brand-50/50 border border-brand-200 rounded-lg p-2.5 text-xs text-gray-705 focus:outline-none focus:ring-2 focus:ring-brand-gold/20 focus:border-brand-gold transition duration-200">
+          <option value="Hyderabad">Hyderabad (Gachibowli)</option>
+          <option value="Goa">Goa (Beachside)</option>
+        </select>
+      </div>
+
+      <!-- Check In Date -->
+      <div class="flex flex-col gap-1.5">
+        <label class="text-[10px] font-bold text-gray-500 uppercase tracking-wider flex items-center gap-1">
+          <svg class="w-3.5 h-3.5 text-brand-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+          Check-In
+        </label>
+        <input type="date" id="heroCheckIn" class="w-full bg-brand-50/50 border border-brand-200 rounded-lg p-2.5 text-xs text-gray-705 focus:outline-none focus:ring-2 focus:ring-brand-gold/20 focus:border-brand-gold transition duration-200" />
+      </div>
+
+      <!-- Check Out Date -->
+      <div class="flex flex-col gap-1.5">
+        <label class="text-[10px] font-bold text-gray-500 uppercase tracking-wider flex items-center gap-1">
+          <svg class="w-3.5 h-3.5 text-brand-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+          Check-Out
+        </label>
+        <input type="date" id="heroCheckOut" class="w-full bg-brand-50/50 border border-brand-200 rounded-lg p-2.5 text-xs text-gray-705 focus:outline-none focus:ring-2 focus:ring-brand-gold/20 focus:border-brand-gold transition duration-200" />
+      </div>
+
+      <!-- Guests -->
+      <div class="flex flex-col gap-1.5">
+        <label class="text-[10px] font-bold text-gray-500 uppercase tracking-wider flex items-center gap-1">
+          <svg class="w-3.5 h-3.5 text-brand-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          Guests
+        </label>
+        <select id="heroGuests" class="w-full bg-brand-50/50 border border-brand-200 rounded-lg p-2.5 text-xs text-gray-705 focus:outline-none focus:ring-2 focus:ring-brand-gold/20 focus:border-brand-gold transition duration-200">
+          <option value="1">1 Guest</option>
+          <option value="2">2 Guests</option>
+          <option value="3">3 Guests</option>
+          <option value="4+">4+ Guests</option>
+        </select>
+      </div>
+
+      <!-- Submit Button -->
+      <div>
+        <button
+          onclick="searchFromHero()"
+          class="w-full bg-brand-700 hover:bg-brand-800 text-white rounded-lg p-3.5 text-xs uppercase tracking-widest font-bold transition flex items-center justify-center gap-2 hover:shadow-lg duration-300"
+        >
+          Check Rates
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Locations Section -->
+  <section id="locations" class="py-32 px-6 md:px-16 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center max-w-2xl mx-auto mb-20 reveal">
+        <span class="text-brand-goldDark text-xs font-bold uppercase tracking-widest">Our Portfolio</span>
+        <h2 class="text-3xl md:text-5xl font-serif font-bold text-brand-800 mt-2 mb-4">
+          Discover Our Locations
+        </h2>
+        <div class="w-16 h-[2px] bg-brand-gold mx-auto mb-6"></div>
+        <p class="text-gray-500 text-sm leading-relaxed">
+          Irose Guest House offers strategic locations designed to match the needs of your trip, featuring standard amenities across both branches.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-12">
+        <!-- Hyderabad Branch -->
+        <div class="group bg-brand-50 rounded-2xl overflow-hidden border border-gray-100 shadow-sm luxury-card-hover flex flex-col justify-between reveal delay-100">
+          <div>
+            <div class="h-80 w-full overflow-hidden relative">
+              <img
+                src="https://images.unsplash.com/photo-1582719508461-905c673771fd?q=80&w=1200&auto=format&fit=crop"
+                alt="Hyderabad Executive Suite"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-brand-900/60 to-transparent"></div>
+              <span class="absolute top-4 left-4 bg-white/95 text-brand-800 font-semibold text-[10px] py-1 px-3 rounded uppercase tracking-wider shadow-sm">
+                Corporate Hub
+              </span>
+            </div>
+            
+            <div class="p-8">
+              <h3 class="text-2xl font-serif font-bold text-brand-800 mb-3">Hyderabad Branch</h3>
+              <p class="text-xs text-brand-goldDark font-semibold uppercase tracking-wider mb-3 flex items-center gap-1">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                Gachibowli High Street, Hyderabad
+              </p>
+              <p class="text-sm text-gray-500 mb-6 leading-relaxed">
+                Located in Gachibowli, our Hyderabad suites provide high-speed fiber Wi-Fi, custom workstations, full kitchens, and proximity to major business parks.
+              </p>
+              
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="bg-white px-3 py-1 rounded border border-gray-200 text-[10px] text-gray-600 font-medium">💻 Workstations</span>
+                <span class="bg-white px-3 py-1 rounded border border-gray-200 text-[10px] text-gray-600 font-medium">📶 100+ Mbps Fiber</span>
+                <span class="bg-white px-3 py-1 rounded border border-gray-200 text-[10px] text-gray-600 font-medium">🍳 Full Kitchen</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="px-8 pb-8 pt-4 border-t border-gray-100 bg-white/50 flex items-center justify-between">
+            <span class="text-xs text-gray-400 font-medium">Rates from <strong class="text-brand-700 text-sm">₹2,799/night</strong></span>
+            <button 
+              onclick="switchLocationTab('hyderabad'); scrollToRooms();" 
+              class="text-xs font-bold text-brand-goldDark hover:text-brand-gold uppercase tracking-wider flex items-center gap-1 transition"
+            >
+              Explore Hyderabad Stays
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Goa Branch -->
+        <div class="group bg-brand-50 rounded-2xl overflow-hidden border border-gray-100 shadow-sm luxury-card-hover flex flex-col justify-between reveal delay-200">
+          <div>
+            <div class="h-80 w-full overflow-hidden relative">
+              <img
+                src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=1200&auto=format&fit=crop"
+                alt="Goa Beach Resort Villa"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-brand-900/60 to-transparent"></div>
+              <span class="absolute top-4 left-4 bg-white/95 text-brand-800 font-semibold text-[10px] py-1 px-3 rounded uppercase tracking-wider shadow-sm">
+                Coastal Retreat
+              </span>
+            </div>
+            
+            <div class="p-8">
+              <h3 class="text-2xl font-serif font-bold text-brand-800 mb-3">Goa Branch</h3>
+              <p class="text-xs text-brand-goldDark font-semibold uppercase tracking-wider mb-3 flex items-center gap-1">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                Near Calangute Beach, North Goa
+              </p>
+              <p class="text-sm text-gray-500 mb-6 leading-relaxed">
+                Positioned near key beaches, our Goa branch offers lush gardens, private spaces, and full amenities for families, friend groups, and travelers seeking coastal quiet.
+              </p>
+              
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="bg-white px-3 py-1 rounded border border-gray-200 text-[10px] text-gray-600 font-medium">🏖️ Near Beach</span>
+                <span class="bg-white px-3 py-1 rounded border border-gray-200 text-[10px] text-gray-600 font-medium">🍃 Private Balconies</span>
+                <span class="bg-white px-3 py-1 rounded border border-gray-200 text-[10px] text-gray-600 font-medium">🚗 Private Parking</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="px-8 pb-8 pt-4 border-t border-gray-100 bg-white/50 flex items-center justify-between">
+            <span class="text-xs text-gray-400 font-medium">Rates from <strong class="text-brand-700 text-sm">₹2,499/night</strong></span>
+            <button 
+              onclick="switchLocationTab('goa'); scrollToRooms();" 
+              class="text-xs font-bold text-brand-goldDark hover:text-brand-gold uppercase tracking-wider flex items-center gap-1 transition"
+            >
+              Explore Goa Stays
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Brand Amenities Section -->
+  <section id="services" class="py-24 px-6 md:px-16 bg-brand-100/30 border-y border-brand-200">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+        <span class="text-brand-goldDark text-xs font-bold uppercase tracking-widest">Exceptional Comfort</span>
+        <h2 class="text-3xl font-serif font-bold text-brand-800 mt-2">Core Premium Amenities</h2>
+        <div class="w-12 h-[2px] bg-brand-gold mx-auto mt-4"></div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Wifi -->
+        <div class="bg-white rounded-xl p-8 border border-gray-100 shadow-sm luxury-card-hover reveal delay-100">
+          <div class="w-12 h-12 bg-brand-50 rounded-lg flex items-center justify-center mb-6 border border-brand-200">
+            <svg class="w-6 h-6 text-brand-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071a10.5 10.5 0 0114.14 0M1.758 7.182a16.5 16.5 0 0120.484 0"/></svg>
+          </div>
+          <h4 class="font-bold text-brand-800 text-base mb-2 font-sans">High-Speed Wi-Fi</h4>
+          <p class="text-xs text-gray-500 leading-relaxed font-light">Dedicated router per flat to ensure uninterrupted online work or leisure browsing.</p>
+        </div>
+
+        <!-- Parking -->
+        <div class="bg-white rounded-xl p-8 border border-gray-100 shadow-sm luxury-card-hover reveal delay-200">
+          <div class="w-12 h-12 bg-brand-50 rounded-lg flex items-center justify-center mb-6 border border-brand-200">
+            <svg class="w-6 h-6 text-brand-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h4 class="font-bold text-brand-800 text-base mb-2 font-sans">Secure Parking</h4>
+          <p class="text-xs text-gray-500 leading-relaxed font-light">Protected vehicle parking area monitored 24/7 inside the guest house gates.</p>
+        </div>
+
+        <!-- AC -->
+        <div class="bg-white rounded-xl p-8 border border-gray-100 shadow-sm luxury-card-hover reveal delay-300">
+          <div class="w-12 h-12 bg-brand-50 rounded-lg flex items-center justify-center mb-6 border border-brand-200">
+            <svg class="w-6 h-6 text-brand-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h4 class="font-bold text-brand-800 text-base mb-2 font-sans">Full Climate Control</h4>
+          <p class="text-xs text-gray-500 leading-relaxed font-light">Advanced split air conditioners installed in all bedrooms and living lounges.</p>
+        </div>
+
+        <!-- Support -->
+        <div class="bg-white rounded-xl p-8 border border-gray-100 shadow-sm luxury-card-hover reveal delay-400">
+          <div class="w-12 h-12 bg-brand-50 rounded-lg flex items-center justify-center mb-6 border border-brand-200">
+            <svg class="w-6 h-6 text-brand-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+          </div>
+          <h4 class="font-bold text-brand-800 text-base mb-2 font-sans">24/7 Desk Help</h4>
+          <p class="text-xs text-gray-500 leading-relaxed font-light">Our hospitality staff is available at both properties to assist with utilities, keys, or directions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rooms Section (Tabbed Navigation) -->
+  <section id="rooms" class="py-32 px-6 md:px-16 bg-gray-50 border-b border-brand-100/50">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 reveal">
+        <div>
+          <span class="text-brand-goldDark text-xs font-bold uppercase tracking-widest">Accommodation Plans</span>
+          <h2 class="text-3xl md:text-5xl font-serif font-bold text-brand-800 mt-2">
+            Rooms & Pricing
+          </h2>
+          <div class="w-16 h-[2px] bg-brand-gold mt-4"></div>
+        </div>
+        
+        <!-- Premium Tab Switcher -->
+        <div class="flex gap-1 bg-white border border-gray-200 p-1 rounded shadow-sm mt-6 md:mt-0 max-w-xs">
+          <button
+            id="tab-hyderabad"
+            onclick="switchLocationTab('hyderabad')"
+            class="flex-1 text-center py-2 px-6 rounded text-xs font-bold uppercase tracking-wider transition duration-300 bg-brand-700 text-white shadow-sm"
+          >
+            Hyderabad Stays
+          </button>
+          <button
+            id="tab-goa"
+            onclick="switchLocationTab('goa')"
+            class="flex-1 text-center py-2 px-6 rounded text-xs font-bold uppercase tracking-wider transition duration-300 text-gray-500 hover:text-brand-800"
+          >
+            Goa Stays
+          </button>
+        </div>
+      </div>
+
+      <!-- Hyderabad Rooms Container (Active by default) -->
+      <div id="rooms-hyderabad" class="rooms-container grid md:grid-cols-2 gap-10 reveal">
+        <!-- Hyd Room 1 -->
+        <div class="bg-white rounded-xl overflow-hidden border border-gray-100 shadow-md flex flex-col justify-between group luxury-card-hover">
+          <div>
+            <div class="relative h-72 w-full overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=1200&auto=format&fit=crop"
+                alt="1 BHK Executive Suite Hyderabad"
+                class="h-full w-full object-cover group-hover:scale-110 transition-transform duration-700"
+              />
+              <span class="absolute top-4 right-4 bg-brand-900/90 text-white font-semibold text-[10px] py-1 px-3 rounded uppercase tracking-wider">
+                Hyderabad Gachibowli
+              </span>
+            </div>
+
+            <div class="p-8">
+              <div class="flex items-center justify-between mb-2">
+                <h3 class="text-xl font-serif font-bold text-gray-900">1 BHK Executive Flat</h3>
+                <span class="text-[10px] bg-brand-100 text-brand-700 px-2 py-0.5 rounded font-bold uppercase">Business Choice</span>
+              </div>
+              <p class="text-xs text-gray-400 mb-4 font-semibold">1 Bed · 1 Bath · Workstation · High-Speed Wi-Fi</p>
+              <p class="text-sm text-gray-500 leading-relaxed mb-6 font-light">
+                Tailored for IT professionals and corporate travelers. Features a workspace desk, superfast fiber Wi-Fi, fully integrated kitchen area, and high-quality fittings.
+              </p>
+              
+              <div class="grid grid-cols-2 gap-2 border-t border-gray-100 pt-4 text-xs text-gray-500 font-semibold">
+                <div class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-brand-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                  Gachibowli Area
+                </div>
+                <div class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-brand-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                  King Size Bed
+                </div>
+                <div class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-brand-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                  Dedicated Workdesk
+                </div>
+                <div class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-brand-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                  Fiber Web Connectivity
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="px-8 pb-8 pt-4 border-t border-gray-100 flex items-center justify-between">
+            <div>
+              <span class="text-[10px] text-gray-400 block font-bold uppercase tracking-wider">Per Night Rate</span>
+              <span class="text-brand-700 font-bold text-2xl font-serif">₹2,799</span>
+            </div>
+
+            <button
+              onclick="openBookingForm('Hyderabad', '1 BHK Executive Flat (Hyd)')"
+              class="bg-brand-700 hover:bg-brand-800 text-white font-semibold text-xs uppercase tracking-widest px-6 py-3 rounded-lg transition duration-300 shadow-sm hover:shadow-md"
+            >
+              Book Now
+            </button>
+          </div>
+        </div>
+
+        <!-- Hyd Room 2 -->
+        <div class="bg-white rounded-xl overflow-hidden border border-gray-100 shadow-md flex flex-col justify-between group luxury-card-hover">
+          <div>
+            <div class="relative h-72 w-full overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1554995207-c18c203602cb?q=80&w=1200&auto=format&fit=crop"
+                alt="2 BHK Luxury Apartment Hyderabad"
+                class="h-full w-full object-cover group-hover:scale-110 transition-transform duration-700"
+              />
+              <span class="absolute top-4 right-4 bg-brand-900/90 text-white font-semibold text-[10px] py-1 px-3 rounded uppercase tracking-wider">
+                Hyderabad Gachibowli
+              </span>
+            </div>
+
+            <div class="p-8">
+              <div class="flex items-center justify-between mb-2">
+                <h3 class="text-xl font-serif font-bold text-gray-900">2 BHK Premium Flat</h3>
+                <span class="text-[10px] bg-brand-100 text-brand-700 px-2 py-0.5 rounded font-bold uppercase">Luxury Suite</span>
+              </div>
+              <p class="text-xs text-gray-400 mb-4 font-semibold">2 Beds · 2 Baths · Living Room · Laundry & Kitchen</p>
+              <p class="text-sm text-gray-500 leading-relaxed mb-6 font-light">
+                Premium corporate flat with 2 master bedrooms, attached bathrooms, modern living room, state-of-the-art modular kitchen, washing machine, and complete utility setups.
+              </p>
+              
+              <div class="grid grid-cols-2 gap-2 border-t border-gray-100 pt-4 text-xs text-gray-500 font-semibold">
+                <div class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-brand-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                  Corporate Area Location
+                </div>
+                <div class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-brand-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                  2 King Size Beds
+                </div>
+                <div class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-brand-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                  Washing Machine
+                </div>
+                <div class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-brand-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                  Modular Kitchen
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="px-8 pb-8 pt-4 border-t border-gray-100 flex items-center justify-between">
+            <div>
+              <span class="text-[10px] text-gray-400 block font-bold uppercase tracking-wider">Per Night Rate</span>
+              <span class="text-brand-700 font-bold text-2xl font-serif">₹4,299</span>
+            </div>
+
+            <button
+              onclick="openBookingForm('Hyderabad', '2 BHK Premium Flat (Hyd)')"
+              class="bg-brand-700 hover:bg-brand-800 text-white font-semibold text-xs uppercase tracking-widest px-6 py-3 rounded-lg transition duration-300 shadow-sm hover:shadow-md"
+            >
+              Book Now
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Goa Rooms Container (Hidden by default) -->
+      <div id="rooms-goa" class="rooms-container grid md:grid-cols-2 gap-10 hidden">
+        <!-- Goa Room 1 -->
+        <div class="bg-white rounded-xl overflow-hidden border border-gray-100 shadow-md flex flex-col justify-between group luxury-card-hover">
+          <div>
+            <div class="relative h-72 w-full overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=1200&auto=format&fit=crop"
+                alt="1 Bedroom Flat Goa"
+                class="h-full w-full object-cover group-hover:scale-110 transition-transform duration-700"
+              />
+              <span class="absolute top-4 right-4 bg-brand-900/90 text-white font-semibold text-[10px] py-1 px-3 rounded uppercase tracking-wider">
+                Goa Calangute
+              </span>
+            </div>
+
+            <div class="p-8">
+              <div class="flex items-center justify-between mb-2">
+                <h3 class="text-xl font-serif font-bold text-gray-900">1 Bedroom Garden Flat</h3>
+                <span class="text-[10px] bg-brand-100 text-brand-700 px-2 py-0.5 rounded font-bold uppercase">Popular</span>
+              </div>
+              <p class="text-xs text-gray-400 mb-4 font-semibold">1 Bed · 1 Bath · Kitchenette · Sit-out Garden</p>
+              <p class="text-sm text-gray-500 leading-relaxed mb-6 font-light">
+                A serene private space featuring 1 comfortable air-conditioned bedroom, attached bathroom, fully functional kitchen utilities, and a quiet outdoor lawn access.
+              </p>
+              
+              <div class="grid grid-cols-2 gap-2 border-t border-gray-100 pt-4 text-xs text-gray-500 font-semibold">
+                <div class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-brand-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                  Near Calangute Beach
+                </div>
+                <div class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-brand-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                  Queen Size Bed
+                </div>
+                <div class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-brand-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                  Fully Furnished
+                </div>
+                <div class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-brand-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                  Hot Water 24/7
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="px-8 pb-8 pt-4 border-t border-gray-100 flex items-center justify-between">
+            <div>
+              <span class="text-[10px] text-gray-400 block font-bold uppercase tracking-wider">Per Night Rate</span>
+              <span class="text-brand-700 font-bold text-2xl font-serif">₹2,499</span>
+            </div>
+
+            <button
+              onclick="openBookingForm('Goa', '1 Bedroom Garden Flat (Goa)')"
+              class="bg-brand-700 hover:bg-brand-800 text-white font-semibold text-xs uppercase tracking-widest px-6 py-3 rounded-lg transition duration-300 shadow-sm hover:shadow-md"
+            >
+              Book Now
+            </button>
+          </div>
+        </div>
+
+        <!-- Goa Room 2 -->
+        <div class="bg-white rounded-xl overflow-hidden border border-gray-100 shadow-md flex flex-col justify-between group luxury-card-hover">
+          <div>
+            <div class="relative h-72 w-full overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200&auto=format&fit=crop"
+                alt="2 Bedroom Flat Goa"
+                class="h-full w-full object-cover group-hover:scale-110 transition-transform duration-700"
+              />
+              <span class="absolute top-4 right-4 bg-brand-900/90 text-white font-semibold text-[10px] py-1 px-3 rounded uppercase tracking-wider">
+                Goa Calangute
+              </span>
+            </div>
+
+            <div class="p-8">
+              <div class="flex items-center justify-between mb-2">
+                <h3 class="text-xl font-serif font-bold text-gray-900">2 Bedroom Luxury Flat</h3>
+                <span class="text-[10px] bg-brand-100 text-brand-700 px-2 py-0.5 rounded font-bold uppercase">Best Value</span>
+              </div>
+              <p class="text-xs text-gray-400 mb-4 font-semibold">2 Beds · 2 Baths · Living Lounge · Full Kitchen</p>
+              <p class="text-sm text-gray-500 leading-relaxed mb-6 font-light">
+                Perfect for family retreats. Features 2 large air-conditioned bedrooms, 2 custom bathrooms, a spacious living area, fully fitted kitchen, and private balconies.
+              </p>
+              
+              <div class="grid grid-cols-2 gap-2 border-t border-gray-100 pt-4 text-xs text-gray-500 font-semibold">
+                <div class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-brand-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                  Calangute Area
+                </div>
+                <div class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-brand-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                  2 Queen Beds
+                </div>
+                <div class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-brand-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                  Modern Living Room
+                </div>
+                <div class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-brand-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                  Private Balconies
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="px-8 pb-8 pt-4 border-t border-gray-100 flex items-center justify-between">
+            <div>
+              <span class="text-[10px] text-gray-400 block font-bold uppercase tracking-wider">Per Night Rate</span>
+              <span class="text-brand-700 font-bold text-2xl font-serif">₹3,999</span>
+            </div>
+
+            <button
+              onclick="openBookingForm('Goa', '2 Bedroom Luxury Flat (Goa)')"
+              class="bg-brand-700 hover:bg-brand-800 text-white font-semibold text-xs uppercase tracking-widest px-6 py-3 rounded-lg transition duration-300 shadow-sm hover:shadow-md"
+            >
+              Book Now
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews / Testimonials Section -->
+  <section id="testimonials" class="py-32 px-6 md:px-16 bg-white border-b border-brand-100/50">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+        <span class="text-brand-goldDark text-xs font-bold uppercase tracking-widest">Guest Feedback</span>
+        <h2 class="text-3xl md:text-5xl font-serif font-bold text-brand-800 mt-2">
+          Verified Reviews
+        </h2>
+        <div class="w-12 h-[2px] bg-brand-gold mx-auto mt-4"></div>
+      </div>
+
+      <!-- Testimonial Slider Container -->
+      <div class="relative max-w-4xl mx-auto overflow-hidden reveal">
+        <div id="testimonialSlider" class="flex transition-transform duration-500 ease-in-out">
+          
+          <!-- Review 1 -->
+          <div class="w-full shrink-0 px-4">
+            <div class="bg-brand-50 border border-brand-100 rounded-xl p-8 md:p-12 shadow-sm flex flex-col justify-between h-full max-w-2xl mx-auto relative">
+              <span class="absolute top-6 right-8 text-7xl font-serif text-brand-gold/15 select-none pointer-events-none">“</span>
+              <div>
+                <div class="flex gap-1 mb-6 text-brand-gold">
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                </div>
+                <p class="text-base text-gray-650 italic leading-relaxed mb-8 font-light">
+                  "We booked the 1 BHK executive suite in Hyderabad for a business trip. The desk setup, high-speed Wi-Fi, and location right in Gachibowli made working remotely incredibly easy. Highly recommended for professionals."
+                </p>
+              </div>
+              <div>
+                <h5 class="text-sm font-bold text-brand-800">Kiran Kumar</h5>
+                <span class="text-[10px] text-gray-400 font-semibold uppercase tracking-wider">Hyderabad Stayer · April 2026</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Review 2 -->
+          <div class="w-full shrink-0 px-4">
+            <div class="bg-brand-50 border border-brand-100 rounded-xl p-8 md:p-12 shadow-sm flex flex-col justify-between h-full max-w-2xl mx-auto relative">
+              <span class="absolute top-6 right-8 text-7xl font-serif text-brand-gold/15 select-none pointer-events-none">“</span>
+              <div>
+                <div class="flex gap-1 mb-6 text-brand-gold">
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                </div>
+                <p class="text-base text-gray-650 italic leading-relaxed mb-8 font-light">
+                  "We rented the 2 BHK in Hyderabad. Excellent facilities including a washing machine, modular kitchen, and full parking. Very quiet neighborhood despite being right near Gachibowli center."
+                </p>
+              </div>
+              <div>
+                <h5 class="text-sm font-bold text-brand-800">Rohit Verma</h5>
+                <span class="text-[10px] text-gray-400 font-semibold uppercase tracking-wider">Hyderabad Stayer · June 2026</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 3 -->
+          <div class="w-full shrink-0 px-4">
+            <div class="bg-brand-50 border border-brand-100 rounded-xl p-8 md:p-12 shadow-sm flex flex-col justify-between h-full max-w-2xl mx-auto relative">
+              <span class="absolute top-6 right-8 text-7xl font-serif text-brand-gold/15 select-none pointer-events-none">“</span>
+              <div>
+                <div class="flex gap-1 mb-6 text-brand-gold">
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                </div>
+                <p class="text-base text-gray-655 italic leading-relaxed mb-8 font-light">
+                  "Outstanding value in North Goa. We stayed in the 2 BHK flat and it was spotless, spacious, and very close to Calangute beach. The staff is polite, and the check-in is extremely flexible with payment on arrival."
+                </p>
+              </div>
+              <div>
+                <h5 class="text-sm font-bold text-brand-800">Shreya Sen</h5>
+                <span class="text-[10px] text-gray-400 font-semibold uppercase tracking-wider">Goa Stayer · May 2026</span>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+
+        <!-- Navigation Arrows (Absolute inside wrapper) -->
+        <button onclick="prevTestimonial()" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 border border-brand-200 text-gray-700 p-2.5 rounded-full hover:bg-brand-100 transition shadow-md focus:outline-none z-10 hover:scale-105 duration-200">
+          <svg class="w-4 h-4 text-brand-700" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+        </button>
+        <button onclick="nextTestimonial()" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 border border-brand-200 text-gray-700 p-2.5 rounded-full hover:bg-brand-100 transition shadow-md focus:outline-none z-10 hover:scale-105 duration-200">
+          <svg class="w-4 h-4 text-brand-700" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+
+      <!-- Dots Indicators -->
+      <div class="flex justify-center items-center gap-2 mt-8 reveal">
+        <button onclick="goToTestimonial(0)" class="testimonial-dot w-2 h-2 rounded-full bg-brand-200 transition-all duration-300"></button>
+        <button onclick="goToTestimonial(1)" class="testimonial-dot w-2 h-2 rounded-full bg-brand-200 transition-all duration-300"></button>
+        <button onclick="goToTestimonial(2)" class="testimonial-dot w-2 h-2 rounded-full bg-brand-200 transition-all duration-300"></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Collapsible FAQ Section -->
+  <section id="faqs" class="py-32 px-6 md:px-16 bg-gray-50 border-t border-gray-200">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-16 reveal">
+        <span class="text-brand-goldDark text-xs font-bold uppercase tracking-widest">Your Questions Answered</span>
+        <h2 class="text-3xl md:text-5xl font-serif font-bold text-brand-800 mt-2">
+          Frequently Asked Questions
+        </h2>
+        <div class="w-12 h-[2px] bg-brand-gold mx-auto mt-4"></div>
+      </div>
+
+      <!-- FAQ Container -->
+      <div class="space-y-4 reveal">
+        <!-- FAQ 1 -->
+        <div class="bg-white rounded-lg border border-gray-200 p-6 transition-all duration-300 faq-item cursor-pointer" onclick="toggleFaq(this)">
+          <button class="w-full flex items-center justify-between text-left focus:outline-none pointer-events-none">
+            <span class="font-bold text-sm text-brand-800 font-sans">What are the standard check-in and check-out times?</span>
+            <svg class="w-4 h-4 text-gray-400 faq-chevron transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer text-xs text-gray-500 leading-relaxed font-light mt-0">
+            Our standard check-in time is 12:00 PM and check-out is 11:00 AM. If you require early check-in or late check-out, please let us know during booking or contact the reception helpdesk. We will do our best to accommodate your request depending on room availability.
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="bg-white rounded-lg border border-gray-200 p-6 transition-all duration-300 faq-item cursor-pointer" onclick="toggleFaq(this)">
+          <button class="w-full flex items-center justify-between text-left focus:outline-none pointer-events-none">
+            <span class="font-bold text-sm text-brand-800 font-sans">Is advance payment required to secure a booking?</span>
+            <svg class="w-4 h-4 text-gray-400 faq-chevron transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer text-xs text-gray-500 leading-relaxed font-light mt-0">
+            No advance payment is required. We offer check-in settlement to provide absolute flexibility. You can inspect the room and settle the full payment directly at the reception desk during check-in using cards, UPI, or cash.
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="bg-white rounded-lg border border-gray-200 p-6 transition-all duration-300 faq-item cursor-pointer" onclick="toggleFaq(this)">
+          <button class="w-full flex items-center justify-between text-left focus:outline-none pointer-events-none">
+            <span class="font-bold text-sm text-brand-800 font-sans">What is included in the kitchens of the flats?</span>
+            <svg class="w-4 h-4 text-gray-400 faq-chevron transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer text-xs text-gray-500 leading-relaxed font-light mt-0">
+            All our flats come equipped with a kitchen containing basic utilities, an induction cooktop or gas stove, microwave oven, refrigerator, electric kettle, and essential pots, pans, plates, and cutlery, perfect for preparing home-cooked meals.
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="bg-white rounded-lg border border-gray-200 p-6 transition-all duration-300 faq-item cursor-pointer" onclick="toggleFaq(this)">
+          <button class="w-full flex items-center justify-between text-left focus:outline-none pointer-events-none">
+            <span class="font-bold text-sm text-brand-800 font-sans">How secure are the locations?</span>
+            <svg class="w-4 h-4 text-gray-400 faq-chevron transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer text-xs text-gray-500 leading-relaxed font-light mt-0">
+            Guest safety is our top priority. Both properties feature secure gated perimeters, 24/7 CCTV surveillance of public areas, and continuous desk staff presence to assist guests and monitor entrances.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Premium Booking Modal overlay (Hidden by default) -->
+  <div
+    id="bookingModal"
+    class="fixed inset-0 z-50 overflow-y-auto hidden flex items-center justify-center p-4"
+  >
+    <!-- Dark Modal Backdrop -->
+    <div class="fixed inset-0 bg-brand-900/60 backdrop-blur-sm transition-opacity animate-fade-in" onclick="closeBookingModal()"></div>
+
+    <!-- Modal Box -->
+    <div class="relative bg-white rounded-xl shadow-2xl w-full max-w-2xl overflow-hidden z-10 border border-brand-100 transition-all transform duration-300">
+      <!-- Top banner color bar -->
+      <div class="h-2 bg-brand-gold"></div>
+
+      <!-- Modal Header -->
+      <div class="px-8 py-6 border-b border-gray-100 flex items-center justify-between">
+        <div>
+          <h3 class="text-2xl font-serif font-bold text-brand-800">Reserve Your Room</h3>
+          <p class="text-[10px] text-gray-400 uppercase tracking-widest font-bold">Payment on check-in · Flexible cancellation</p>
+        </div>
+        <button onclick="closeBookingModal()" class="text-gray-400 hover:text-red-500 transition text-2xl font-semibold focus:outline-none">
+          &times;
+        </button>
+      </div>
+
+      <!-- Modal Body (Form) -->
+      <form id="bookingForm" class="p-8 space-y-6" onsubmit="submitBooking(event)">
+        <div class="grid md:grid-cols-2 gap-6">
+          <!-- Location -->
+          <div class="flex flex-col gap-1.5">
+            <label class="text-[10px] font-bold text-gray-500 uppercase tracking-wider">Branch Location</label>
+            <select
+              id="bookingLocation"
+              required
+              class="border border-brand-200 bg-white rounded-lg p-3 text-xs text-gray-750 focus:outline-none focus:ring-2 focus:ring-brand-gold/20 focus:border-brand-gold transition duration-200"
+            >
+              <option value="" disabled>Select Branch...</option>
+              <option value="Hyderabad" selected>Hyderabad (Gachibowli)</option>
+              <option value="Goa">Goa (Calangute)</option>
+            </select>
+          </div>
+
+          <!-- Room Selection -->
+          <div class="flex flex-col gap-1.5">
+            <label class="text-[10px] font-bold text-gray-500 uppercase tracking-wider">Room Type</label>
+            <select
+              id="bookingRoom"
+              required
+              class="border border-brand-200 bg-white rounded-lg p-3 text-xs text-gray-750 focus:outline-none focus:ring-2 focus:ring-brand-gold/20 focus:border-brand-gold transition duration-200"
+            >
+              <option value="" disabled selected>Please select location...</option>
+            </select>
+          </div>
+
+          <!-- Full Name -->
+          <div class="flex flex-col gap-1.5">
+            <label class="text-[10px] font-bold text-gray-500 uppercase tracking-wider">Full Name</label>
+            <input
+              type="text"
+              id="bookingName"
+              placeholder="Your full name"
+              required
+              class="border border-brand-200 bg-white rounded-lg p-3 text-xs text-gray-750 focus:outline-none focus:ring-2 focus:ring-brand-gold/20 focus:border-brand-gold transition duration-200"
+            />
+          </div>
+
+          <!-- Phone Number -->
+          <div class="flex flex-col gap-1.5">
+            <label class="text-[10px] font-bold text-gray-500 uppercase tracking-wider">Phone Number</label>
+            <input
+              type="tel"
+              id="bookingPhone"
+              placeholder="e.g. +91 98765 43210"
+              required
+              class="border border-brand-200 bg-white rounded-lg p-3 text-xs text-gray-750 focus:outline-none focus:ring-2 focus:ring-brand-gold/20 focus:border-brand-gold transition duration-200"
+            />
+          </div>
+
+          <!-- Check-in -->
+          <div class="flex flex-col gap-1.5">
+            <label class="text-[10px] font-bold text-gray-500 uppercase tracking-wider">Check-in Date</label>
+            <input
+              type="date"
+              required
+              id="bookingCheckIn"
+              class="border border-brand-200 bg-white rounded-lg p-3 text-xs text-gray-750 focus:outline-none focus:ring-2 focus:ring-brand-gold/20 focus:border-brand-gold transition duration-200"
+            />
+          </div>
+
+          <!-- Check-out -->
+          <div class="flex flex-col gap-1.5">
+            <label class="text-[10px] font-bold text-gray-500 uppercase tracking-wider">Check-out Date</label>
+            <input
+              type="date"
+              required
+              id="bookingCheckOut"
+              class="border border-brand-200 bg-white rounded-lg p-3 text-xs text-gray-750 focus:outline-none focus:ring-2 focus:ring-brand-gold/20 focus:border-brand-gold transition duration-200"
+            />
+          </div>
+        </div>
+
+        <!-- Additional Requirements -->
+        <div class="flex flex-col gap-1.5">
+          <label class="text-[10px] font-bold text-gray-500 uppercase tracking-wider">Additional Requirements (Optional)</label>
+          <textarea
+            rows="2"
+            id="bookingNotes"
+            placeholder="e.g., Early check-in request, extra cot, airport transfer query"
+            class="border border-brand-200 bg-white rounded-lg p-3 text-xs text-gray-750 focus:outline-none focus:ring-2 focus:ring-brand-gold/20 focus:border-brand-gold transition duration-200"
+          ></textarea>
+        </div>
+
+        <!-- Live Invoice Card -->
+        <div id="bookingInvoice" class="bg-brand-100/60 border border-brand-200 rounded-xl p-5 space-y-3 hidden transition-all duration-300">
+          <h5 class="text-xs font-bold text-brand-800 uppercase tracking-wider border-b border-brand-200 pb-2">Rate & Invoice Breakdown</h5>
+          <div class="space-y-1.5 text-xs text-gray-600">
+            <div class="flex justify-between">
+              <span>Room Rate:</span>
+              <span class="font-semibold text-gray-800" id="invoiceRate">₹0 / night</span>
+            </div>
+            <div class="flex justify-between">
+              <span>Stay Duration:</span>
+              <span class="font-semibold text-gray-800" id="invoiceNights">0 nights</span>
+            </div>
+            <div class="flex justify-between border-b border-brand-200 pb-1.5">
+              <span>Subtotal:</span>
+              <span class="font-semibold text-gray-800" id="invoiceSubtotal">₹0</span>
+            </div>
+            <div class="flex justify-between">
+              <span>GST & Service Charge (12%):</span>
+              <span class="font-semibold text-gray-800" id="invoiceTax">₹0</span>
+            </div>
+            <div class="flex justify-between border-t border-brand-200 pt-2 text-sm text-brand-800 font-bold">
+              <span>Total Estimated Price:</span>
+              <span id="invoiceTotal">₹0</span>
+            </div>
+          </div>
+          <p class="text-[9px] text-gray-400 font-light italic mt-1">*Payment to be settled at the reception counter during check-in. Cancellation is free up to 24 hours.</p>
+        </div>
+
+        <!-- Security / Policy Callout -->
+        <div class="bg-brand-100 border border-brand-200 rounded-lg p-4 flex gap-3 text-xs text-brand-900">
+          <svg class="w-5 h-5 text-brand-700 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          <div>
+            <h5 class="font-bold mb-0.5">Verified Safe Booking</h5>
+            <p class="text-gray-500 font-light">Your details are transmitted securely. No advance deposit is taken. You can modify or cancel your reservation by phone up to 24 hours prior to arrival.</p>
+          </div>
+        </div>
+
+        <!-- Actions -->
+        <div class="flex gap-4">
+          <button
+            type="button"
+            onclick="closeBookingModal()"
+            class="w-1/3 border border-brand-200 text-gray-700 rounded-lg p-3.5 text-xs uppercase tracking-widest font-bold hover:bg-brand-100 transition duration-300"
+          >
+            Cancel
+          </button>
+          <button
+            type="submit"
+            class="w-2/3 bg-brand-700 hover:bg-brand-800 text-white rounded-lg p-3.5 text-xs uppercase tracking-widest font-bold transition duration-300 shadow-md hover:shadow-lg"
+          >
+            Confirm Booking
+          </button>
+        </div>
+      </form>
+
+      <!-- Premium Success Notification & Receipt Dashboard inside Modal -->
+      <div
+        id="successNotification"
+        class="hidden absolute inset-0 bg-brand-50 overflow-y-auto flex flex-col items-center p-8 text-center"
+      >
+        <div class="w-12 h-12 bg-brand-100 rounded-full flex items-center justify-center mb-4 border border-brand-200 shrink-0">
+          <svg class="w-6 h-6 text-brand-700" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+        </div>
+        <h4 class="text-2xl font-serif font-bold text-brand-800 mb-1">Reservation Request Received</h4>
+        <p class="text-xs text-gray-400 max-w-sm font-light mb-6">Our guest service desk will contact you within 30 minutes to verify check-in details.</p>
+        
+        <!-- Receipt Card -->
+        <div id="receiptCard" class="w-full max-w-md bg-white border border-brand-200 rounded-xl shadow-md p-6 text-left relative overflow-hidden mb-6">
+          <div class="absolute -top-10 -right-10 w-24 h-24 bg-brand-100 rounded-full border border-brand-200 flex items-center justify-center opacity-40 select-none pointer-events-none">
+            <span class="text-[10px] text-brand-gold font-bold tracking-widest uppercase rotate-45 mt-4 mr-4">IROSE</span>
+          </div>
+          
+          <div class="flex justify-between items-center border-b border-dashed border-gray-200 pb-4 mb-4">
+            <div>
+              <span class="text-[9px] text-gray-400 font-bold uppercase tracking-wider block">Booking Reference</span>
+              <span id="receiptId" class="text-sm font-bold text-brand-800 font-mono">IR-2026-9812</span>
+            </div>
+            <div class="text-right">
+              <span class="text-[9px] text-gray-400 font-bold uppercase tracking-wider block">Status</span>
+              <span class="text-[10px] bg-green-50 text-green-700 border border-green-200 py-0.5 px-2 rounded-full font-bold uppercase">Reserved</span>
+            </div>
+          </div>
+          
+          <div class="space-y-3 text-xs">
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <span class="text-[9px] text-gray-400 uppercase tracking-widest font-bold block">Guest Name</span>
+                <span id="receiptName" class="font-semibold text-gray-800">John Doe</span>
+              </div>
+              <div>
+                <span class="text-[9px] text-gray-400 uppercase tracking-widest font-bold block">Phone Contact</span>
+                <span id="receiptPhone" class="font-semibold text-gray-800">+91 99999 99999</span>
+              </div>
+            </div>
+            
+            <div class="border-t border-gray-100 pt-3">
+              <span class="text-[9px] text-gray-400 uppercase tracking-widest font-bold block">Location & Room</span>
+              <span id="receiptRoom" class="font-semibold text-gray-850 font-serif">1 BHK Executive Flat (Hyderabad)</span>
+            </div>
+            
+            <div class="grid grid-cols-2 gap-4 border-t border-gray-100 pt-3">
+              <div>
+                <span class="text-[9px] text-gray-400 uppercase tracking-widest font-bold block">Check-In Date</span>
+                <span id="receiptCheckIn" class="font-semibold text-gray-800">June 9, 2026</span>
+              </div>
+              <div>
+                <span class="text-[9px] text-gray-400 uppercase tracking-widest font-bold block">Check-Out Date</span>
+                <span id="receiptCheckOut" class="font-semibold text-gray-800">June 12, 2026</span>
+              </div>
+            </div>
+
+            <div class="border-t border-dashed border-gray-200 pt-4 flex justify-between items-center text-sm font-bold text-brand-800">
+              <div>
+                <span class="text-[9px] text-gray-400 uppercase tracking-widest font-bold block">Settlement Details</span>
+                <span class="text-xs font-light text-gray-550">Pay at Desk (GST Incl.)</span>
+              </div>
+              <div class="text-right">
+                <span class="text-[9px] text-gray-400 uppercase tracking-widest font-bold block">Total Amount</span>
+                <span id="receiptTotal" class="text-lg font-serif text-brand-700">₹8,397</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Receipt Utilities -->
+        <div class="flex gap-3 w-full max-w-md mb-4 shrink-0">
+          <button
+            onclick="copyReceiptToClipboard()"
+            class="flex-1 border border-brand-200 bg-white hover:bg-brand-50 text-gray-700 rounded-lg py-3 text-xs uppercase tracking-widest font-bold transition flex items-center justify-center gap-2 duration-200"
+          >
+            <svg class="w-4 h-4 text-brand-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/></svg>
+            Copy Details
+          </button>
+          <button
+            onclick="window.print()"
+            class="flex-1 border border-brand-200 bg-white hover:bg-brand-50 text-gray-700 rounded-lg py-3 text-xs uppercase tracking-widest font-bold transition flex items-center justify-center gap-2 duration-200"
+          >
+            <svg class="w-4 h-4 text-brand-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+            Print Receipt
+          </button>
+        </div>
+        
+        <button
+          onclick="closeBookingModal()"
+          class="w-full max-w-md bg-brand-700 hover:bg-brand-800 text-white rounded-lg py-3.5 text-xs uppercase tracking-widest font-bold transition duration-300"
+        >
+          Return to Guest House
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Corporate / Footer section -->
+  <footer class="bg-brand-900 text-white pt-24 pb-12 border-t border-brand-800">
+    <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+      
+      <!-- Logo and Description -->
+      <div class="md:col-span-2">
+        <h3 class="font-serif text-2xl font-bold mb-4 tracking-tight">
+          IROSE <span class="text-brand-gold font-sans font-light text-base uppercase tracking-widest ml-1">Guest House</span>
+        </h3>
+        <p class="text-xs text-gray-400 leading-relaxed max-w-sm mb-6 font-light">
+          Providing boutique serviced stays featuring standard home utilities, secure properties, and flexible booking services. Catering to corporate stays in Hyderabad and coastal retreats in Goa.
+        </p>
+        
+        <!-- Social Media Icons (SVGs) -->
+        <div class="flex gap-4">
+          <a href="#" class="w-8 h-8 bg-brand-800 hover:bg-brand-gold transition rounded-full flex items-center justify-center text-white">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1V12h3v3h-3v6.8c4.56-.93 8-4.96 8-9.8z"/></svg>
+          </a>
+          <a href="#" class="w-8 h-8 bg-brand-800 hover:bg-brand-gold transition rounded-full flex items-center justify-center text-white">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+          </a>
+          <a href="#" class="w-8 h-8 bg-brand-800 hover:bg-brand-gold transition rounded-full flex items-center justify-center text-white">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick Nav Links -->
+      <div>
+        <h4 class="text-xs font-bold uppercase tracking-wider text-brand-gold mb-6">Explore</h4>
+        <div class="flex flex-col gap-3 text-xs text-gray-400 font-semibold">
+          <a href="#home" class="hover:text-white transition">Back to Top</a>
+          <a href="#locations" class="hover:text-white transition">Our Stays</a>
+          <a href="#rooms" class="hover:text-white transition">Rooms & Pricing</a>
+          <a href="#services" class="hover:text-white transition">Brand Amenities</a>
+          <a href="#testimonials" class="hover:text-white transition">Guest Reviews</a>
+          <a href="#faqs" class="hover:text-white transition">FAQs</a>
+        </div>
+      </div>
+
+      <!-- Helpdesk Contacts -->
+      <div>
+        <h4 class="text-xs font-bold uppercase tracking-wider text-brand-gold mb-6">Branch Offices</h4>
+        <div class="space-y-4 text-xs text-gray-400 leading-relaxed font-semibold">
+          <div>
+            <span class="text-white block font-bold">🏛️ Hyderabad Helpdesk</span>
+            <p class="font-light">Gachibowli High Street, Hyderabad, 500032</p>
+          </div>
+          <div>
+            <span class="text-white block font-bold">🌴 Goa Helpdesk</span>
+            <p class="font-light">Near Calangute Beach, North Goa, 403516</p>
+          </div>
+          <div class="border-t border-brand-800 pt-3">
+            <span class="text-white block font-bold">Central Support</span>
+            <p class="mt-1">📞 +91 8374661394</p>
+            <p>✉️ iroseguesthouse@gmail.com</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Copyright -->
+    <div class="max-w-6xl mx-auto px-6 border-t border-brand-800 pt-8 text-center text-[10px] text-gray-500 font-semibold">
+      <p>© 2026 Irose Guest House Private Limited. All rights reserved. Designed for comfort.</p>
+    </div>
+  </footer>
+
+  <!-- Javascript -->
+  <script>
+    // Database of rooms with pricing keys
+    const roomDatabase = {
+      Hyderabad: [
+        { id: "Hyd-1BHK", name: "1 BHK Executive Flat (Hyd)", rate: 2799 },
+        { id: "Hyd-2BHK", name: "2 BHK Premium Flat (Hyd)", rate: 4299 }
+      ],
+      Goa: [
+        { id: "Goa-1BHK", name: "1 Bedroom Garden Flat (Goa)", rate: 2499 },
+        { id: "Goa-2BHK", name: "2 Bedroom Luxury Flat (Goa)", rate: 3999 }
+      ]
+    };
+
+    // Scrolled Navbar Theme Controller
+    window.addEventListener('scroll', function() {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.remove('navbar-transparent', 'py-6');
+        navbar.classList.add('navbar-scrolled');
+      } else {
+        navbar.classList.remove('navbar-scrolled');
+        navbar.classList.add('navbar-transparent', 'py-6');
+      }
+    });
+
+    // Scroll Reveal Engine
+    document.addEventListener("DOMContentLoaded", function() {
+      const revealElements = document.querySelectorAll(".reveal");
+      
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("revealed");
+            observer.unobserve(entry.target); // Reveal once
+          }
+        });
+      }, {
+        threshold: 0.08,
+        rootMargin: "0px 0px -40px 0px"
+      });
+      
+      revealElements.forEach(el => observer.observe(el));
+    });
+
+    // Toggle Mobile Drawer Navigation
+    function toggleMobileMenu() {
+      const overlay = document.getElementById('mobileMenuOverlay');
+      const drawer = document.getElementById('mobileMenuDrawer');
+      const isOpen = !drawer.classList.contains('translate-x-full');
+      
+      if (isOpen) {
+        drawer.classList.add('translate-x-full');
+        overlay.classList.add('opacity-0', 'pointer-events-none');
+        overlay.classList.remove('opacity-100');
+        document.body.classList.remove('overflow-hidden');
+      } else {
+        drawer.classList.remove('translate-x-full');
+        overlay.classList.remove('opacity-0', 'pointer-events-none');
+        overlay.classList.add('opacity-100');
+        document.body.classList.add('overflow-hidden');
+      }
+    }
+
+    // Toggle Location selection inside Rooms tab (Cross-fade transition)
+    function switchLocationTab(location) {
+      const tabGoa = document.getElementById('tab-goa');
+      const tabHyd = document.getElementById('tab-hyderabad');
+      const roomsGoa = document.getElementById('rooms-goa');
+      const roomsHyd = document.getElementById('rooms-hyderabad');
+
+      const activeContainer = location === 'hyderabad' ? roomsHyd : roomsGoa;
+      const inactiveContainer = location === 'hyderabad' ? roomsGoa : roomsHyd;
+
+      inactiveContainer.classList.add('fade-out');
+      
+      if (location === 'hyderabad') {
+        tabHyd.className = "flex-1 text-center py-2 px-6 rounded text-xs font-bold uppercase tracking-wider transition duration-300 bg-brand-700 text-white shadow-sm";
+        tabGoa.className = "flex-1 text-center py-2 px-6 rounded text-xs font-bold uppercase tracking-wider transition duration-300 text-gray-500 hover:text-brand-800";
+      } else {
+        tabGoa.className = "flex-1 text-center py-2 px-6 rounded text-xs font-bold uppercase tracking-wider transition duration-300 bg-brand-700 text-white shadow-sm";
+        tabHyd.className = "flex-1 text-center py-2 px-6 rounded text-xs font-bold uppercase tracking-wider transition duration-300 text-gray-500 hover:text-brand-800";
+      }
+
+      setTimeout(() => {
+        inactiveContainer.classList.add('hidden');
+        activeContainer.classList.remove('hidden');
+        activeContainer.offsetHeight; // Force reflow
+        activeContainer.classList.remove('fade-out');
+      }, 300);
+    }
+
+    // Update the room selection dropdown dynamically based on location
+    function updateRoomDropdown(selectedRoomName = "") {
+      const locationSelect = document.getElementById('bookingLocation');
+      const roomSelect = document.getElementById('bookingRoom');
+      const location = locationSelect.value;
+
+      roomSelect.innerHTML = "";
+
+      if (!location || !roomDatabase[location]) {
+        const defaultOpt = document.createElement('option');
+        defaultOpt.text = "Please select location first...";
+        defaultOpt.disabled = true;
+        defaultOpt.selected = true;
+        roomSelect.add(defaultOpt);
+        return;
+      }
+
+      roomDatabase[location].forEach(room => {
+        const opt = document.createElement('option');
+        opt.value = room.name;
+        opt.text = `${room.name} - ₹${room.rate.toLocaleString('en-IN')}/night`;
+        
+        if (selectedRoomName && room.name.includes(selectedRoomName)) {
+          opt.selected = true;
+        }
+        
+        roomSelect.add(opt);
+      });
+    }
+
+    // Validate Check-in & Check-out date offsets
+    function validateDates() {
+      const checkInInput = document.getElementById('bookingCheckIn');
+      const checkOutInput = document.getElementById('bookingCheckOut');
+      const todayStr = new Date().toISOString().split('T')[0];
+
+      checkInInput.min = todayStr;
+
+      if (checkInInput.value) {
+        const checkInDate = new Date(checkInInput.value);
+        const minCheckOutDate = new Date(checkInDate);
+        minCheckOutDate.setDate(minCheckOutDate.getDate() + 1);
+        const minCheckOutStr = minCheckOutDate.toISOString().split('T')[0];
+
+        checkOutInput.min = minCheckOutStr;
+
+        if (checkOutInput.value && checkOutInput.value <= checkInInput.value) {
+          checkOutInput.value = minCheckOutStr;
+        }
+      }
+    }
+
+    // Validate date offsets in Hero Search Bar
+    function validateHeroDates() {
+      const checkInInput = document.getElementById('heroCheckIn');
+      const checkOutInput = document.getElementById('heroCheckOut');
+      const todayStr = new Date().toISOString().split('T')[0];
+
+      checkInInput.min = todayStr;
+
+      if (checkInInput.value) {
+        const checkInDate = new Date(checkInInput.value);
+        const minCheckOutDate = new Date(checkInDate);
+        minCheckOutDate.setDate(minCheckOutDate.getDate() + 1);
+        const minCheckOutStr = minCheckOutDate.toISOString().split('T')[0];
+
+        checkOutInput.min = minCheckOutStr;
+
+        if (checkOutInput.value && checkOutInput.value <= checkInInput.value) {
+          checkOutInput.value = minCheckOutStr;
+        }
+      }
+    }
+
+    // Calculate Invoice Billing Summary in Booking modal
+    function calculateInvoice() {
+      const location = document.getElementById('bookingLocation').value;
+      const roomSelect = document.getElementById('bookingRoom');
+      const checkInVal = document.getElementById('bookingCheckIn').value;
+      const checkOutVal = document.getElementById('bookingCheckOut').value;
+      const invoiceDiv = document.getElementById('bookingInvoice');
+
+      if (!location || !roomSelect.value || !checkInVal || !checkOutVal) {
+        invoiceDiv.classList.add('hidden');
+        return;
+      }
+
+      let rate = 0;
+      const selectedRoomName = roomSelect.value;
+      
+      if (roomDatabase[location]) {
+        const roomObj = roomDatabase[location].find(r => selectedRoomName.includes(r.name));
+        if (roomObj) {
+          rate = roomObj.rate;
+        }
+      }
+
+      if (rate === 0) {
+        invoiceDiv.classList.add('hidden');
+        return;
+      }
+
+      const checkInDate = new Date(checkInVal);
+      const checkOutDate = new Date(checkOutVal);
+      const diffTime = checkOutDate - checkInDate;
+      const diffNights = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+      if (diffNights <= 0) {
+        invoiceDiv.classList.add('hidden');
+        return;
+      }
+
+      const subtotal = rate * diffNights;
+      const tax = Math.round(subtotal * 0.12);
+      const total = subtotal + tax;
+
+      document.getElementById('invoiceRate').innerText = `₹${rate.toLocaleString('en-IN')} / night`;
+      document.getElementById('invoiceNights').innerText = `${diffNights} night${diffNights > 1 ? 's' : ''}`;
+      document.getElementById('invoiceSubtotal').innerText = `₹${subtotal.toLocaleString('en-IN')}`;
+      document.getElementById('invoiceTax').innerText = `₹${tax.toLocaleString('en-IN')}`;
+      document.getElementById('invoiceTotal').innerText = `₹${total.toLocaleString('en-IN')}`;
+
+      invoiceDiv.classList.remove('hidden');
+    }
+
+    // Open booking modal
+    function openBookingModal() {
+      const modal = document.getElementById('bookingModal');
+      modal.classList.remove('hidden');
+      document.body.classList.add('overflow-hidden');
+      
+      const checkInInput = document.getElementById('bookingCheckIn');
+      const checkOutInput = document.getElementById('bookingCheckOut');
+      if (!checkInInput.value) {
+        const today = new Date();
+        const tomorrow = new Date(today);
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        checkInInput.value = today.toISOString().split('T')[0];
+        checkOutInput.value = tomorrow.toISOString().split('T')[0];
+      }
+      
+      validateDates();
+      updateRoomDropdown();
+      calculateInvoice();
+    }
+
+    // Close booking modal
+    function closeBookingModal() {
+      const modal = document.getElementById('bookingModal');
+      const successNotification = document.getElementById('successNotification');
+      modal.classList.add('hidden');
+      successNotification.classList.add('hidden');
+      document.body.classList.remove('overflow-hidden');
+    }
+
+    // Triggered when clicking "Book Now" on a room card
+    function openBookingForm(location, roomName) {
+      openBookingModal();
+
+      const locationSelect = document.getElementById('bookingLocation');
+      locationSelect.value = location;
+      
+      updateRoomDropdown(roomName);
+      calculateInvoice();
+    }
+
+    // Action when user clicks search button inside Hero Section searchbar
+    function searchFromHero() {
+      const location = document.getElementById('heroLocation').value;
+      const checkin = document.getElementById('heroCheckIn').value;
+      const checkout = document.getElementById('heroCheckOut').value;
+      
+      openBookingModal();
+
+      document.getElementById('bookingLocation').value = location;
+      updateRoomDropdown();
+      
+      if (checkin) document.getElementById('bookingCheckIn').value = checkin;
+      if (checkout) document.getElementById('bookingCheckOut').value = checkout;
+
+      validateDates();
+      calculateInvoice();
+
+      switchLocationTab(location.toLowerCase());
+      
+      // Smooth scroll to rooms section
+      document.getElementById('rooms').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Accordion FAQ toggle with dynamic scrollHeight transition
+    function toggleFaq(element) {
+      const isActive = element.classList.contains('faq-active');
+      const allFaqs = document.querySelectorAll('#faqs .faq-item');
+      
+      allFaqs.forEach(faq => {
+        faq.classList.remove('faq-active');
+        const answer = faq.querySelector('.faq-answer');
+        answer.style.maxHeight = '0px';
+      });
+
+      if (!isActive) {
+        element.classList.add('faq-active');
+        const answer = element.querySelector('.faq-answer');
+        const padding = 24; // top and bottom padding heights in px
+        answer.style.maxHeight = (answer.scrollHeight + padding) + 'px';
+      }
+    }
+
+    // Testimonial Carousel Controller
+    let currentTestimonialIndex = 0;
+    const testimonialSlider = document.getElementById('testimonialSlider');
+    const dots = document.querySelectorAll('.testimonial-dot');
+    const totalTestimonials = dots.length;
+    let testimonialInterval;
+
+    function updateTestimonialSlider() {
+      if (!testimonialSlider) return;
+      testimonialSlider.style.transform = `translateX(-${currentTestimonialIndex * 100}%)`;
+      dots.forEach((dot, idx) => {
+        if (idx === currentTestimonialIndex) {
+          dot.classList.remove('bg-brand-200');
+          dot.classList.add('bg-brand-700', 'w-4');
+        } else {
+          dot.classList.remove('bg-brand-700', 'w-4');
+          dot.classList.add('bg-brand-200');
+        }
+      });
+    }
+
+    function nextTestimonial() {
+      currentTestimonialIndex = (currentTestimonialIndex + 1) % totalTestimonials;
+      updateTestimonialSlider();
+      resetTestimonialTimer();
+    }
+
+    function prevTestimonial() {
+      currentTestimonialIndex = (currentTestimonialIndex - 1 + totalTestimonials) % totalTestimonials;
+      updateTestimonialSlider();
+      resetTestimonialTimer();
+    }
+
+    function goToTestimonial(index) {
+      currentTestimonialIndex = index;
+      updateTestimonialSlider();
+      resetTestimonialTimer();
+    }
+
+    // Start auto slide
+    function startTestimonialTimer() {
+      testimonialInterval = setInterval(nextTestimonial, 5000);
+    }
+
+    function resetTestimonialTimer() {
+      clearInterval(testimonialInterval);
+      startTestimonialTimer();
+    }
+
+    // Floating Custom Toast Alerts
+    function showToast(title, message, type = 'success') {
+      const container = document.getElementById('toastContainer');
+      const toast = document.createElement('div');
+      
+      toast.className = `p-4 rounded-xl border shadow-xl flex gap-3 bg-white/95 backdrop-blur-md transition-all duration-500 transform translate-x-12 opacity-0 pointer-events-auto border-brand-200 max-w-sm`;
+      
+      const icon = type === 'success' 
+        ? `<div class="w-8 h-8 rounded-full bg-brand-100 flex items-center justify-center border border-brand-200 shrink-0 text-brand-700">
+             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+           </div>`
+        : `<div class="w-8 h-8 rounded-full bg-red-50 flex items-center justify-center border border-red-200 shrink-0 text-red-650">
+             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+           </div>`;
+
+      toast.innerHTML = `
+        ${icon}
+        <div class="flex-1">
+          <h4 class="text-xs font-bold text-brand-800">${title}</h4>
+          <p class="text-[11px] text-gray-500 mt-0.5 leading-relaxed">${message}</p>
+        </div>
+        <button onclick="this.parentElement.remove()" class="text-gray-400 hover:text-gray-650 transition shrink-0">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      `;
+      
+      container.appendChild(toast);
+      
+      setTimeout(() => {
+        toast.classList.remove('translate-x-12', 'opacity-0');
+      }, 50);
+
+      setTimeout(() => {
+        toast.classList.add('opacity-0', 'translate-y-[-10px]');
+        setTimeout(() => {
+          toast.remove();
+        }, 500);
+      }, 5000);
+    }
+
+    // Copy formatted receipt metadata to clipboard
+    function copyReceiptToClipboard() {
+      const receiptId = document.getElementById('receiptId').innerText;
+      const receiptName = document.getElementById('receiptName').innerText;
+      const receiptPhone = document.getElementById('receiptPhone').innerText;
+      const receiptRoom = document.getElementById('receiptRoom').innerText;
+      const receiptCheckIn = document.getElementById('receiptCheckIn').innerText;
+      const receiptCheckOut = document.getElementById('receiptCheckOut').innerText;
+      const receiptTotal = document.getElementById('receiptTotal').innerText;
+
+      const summary = `🏨 Irose Guest House - Booking Confirmation
+--------------------------------------
+Reference ID: ${receiptId}
+Status: Reserved (Pay on Check-in)
+Guest Name: ${receiptName}
+Phone Contact: ${receiptPhone}
+Accommodation: ${receiptRoom}
+Stay Duration: ${receiptCheckIn} to ${receiptCheckOut}
+Total Amount: ${receiptTotal} (GST Included)
+--------------------------------------
+Thank you for booking with us! Reception support: +91 8374661394`;
+
+      navigator.clipboard.writeText(summary).then(() => {
+        showToast("Copied to Clipboard", "Booking receipt summary has been copied successfully.");
+      }).catch(err => {
+        showToast("Copy Failed", "Unable to copy receipt details.", "error");
+      });
+    }
+
+    // Submit booking form logic
+    function submitBooking(event) {
+      event.preventDefault();
+
+      const location = document.getElementById('bookingLocation').value;
+      const roomName = document.getElementById('bookingRoom').value;
+      const fullName = document.getElementById('bookingName').value;
+      const phone = document.getElementById('bookingPhone').value;
+      const checkInVal = document.getElementById('bookingCheckIn').value;
+      const checkOutVal = document.getElementById('bookingCheckOut').value;
+      
+      let rate = 0;
+      if (roomDatabase[location]) {
+        const roomObj = roomDatabase[location].find(r => roomName.includes(r.name));
+        if (roomObj) rate = roomObj.rate;
+      }
+      
+      const checkInDate = new Date(checkInVal);
+      const checkOutDate = new Date(checkOutVal);
+      const diffTime = checkOutDate - checkInDate;
+      const diffNights = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+      
+      const subtotal = rate * diffNights;
+      const tax = Math.round(subtotal * 0.12);
+      const totalVal = subtotal + tax;
+
+      const dateOptions = { month: 'short', day: 'numeric', year: 'numeric' };
+      const checkInFormatted = checkInDate.toLocaleDateString('en-US', dateOptions);
+      const checkOutFormatted = checkOutDate.toLocaleDateString('en-US', dateOptions);
+
+      const randomId = 'IR-2026-' + Math.floor(1000 + Math.random() * 9000);
+
+      document.getElementById('receiptId').innerText = randomId;
+      document.getElementById('receiptName').innerText = fullName;
+      document.getElementById('receiptPhone').innerText = phone;
+      document.getElementById('receiptRoom').innerText = `${roomName} (${location})`;
+      document.getElementById('receiptCheckIn').innerText = checkInFormatted;
+      document.getElementById('receiptCheckOut').innerText = checkOutFormatted;
+      document.getElementById('receiptTotal').innerText = `₹${totalVal.toLocaleString('en-IN')}`;
+
+      event.target.reset();
+
+      const successNotify = document.getElementById('successNotification');
+      successNotify.classList.remove('hidden');
+      
+      calculateInvoice(); // Reset billing panel
+
+      showToast("Booking Request Sent!", `Your reservation ${randomId} has been registered successfully.`);
+    }
+
+    // Page Load Setup & Bindings
+    window.onload = function() {
+      // Setup current dates for Hero inputs by default
+      const today = new Date();
+      const tomorrow = new Date(today);
+      tomorrow.setDate(tomorrow.getDate() + 1);
+
+      document.getElementById('heroCheckIn').value = today.toISOString().split('T')[0];
+      document.getElementById('heroCheckOut').value = tomorrow.toISOString().split('T')[0];
+
+      validateHeroDates();
+
+      // Form Bindings for Live Invoice Calculations
+      document.getElementById('bookingLocation').addEventListener('change', () => {
+        updateRoomDropdown();
+        calculateInvoice();
+      });
+      document.getElementById('bookingRoom').addEventListener('change', calculateInvoice);
+      document.getElementById('bookingCheckIn').addEventListener('change', () => {
+        validateDates();
+        calculateInvoice();
+      });
+      document.getElementById('bookingCheckOut').addEventListener('change', () => {
+        validateDates();
+        calculateInvoice();
+      });
+
+      // Hero date triggers
+      document.getElementById('heroCheckIn').addEventListener('change', validateHeroDates);
+      document.getElementById('heroCheckOut').addEventListener('change', validateHeroDates);
+
+      // Initialize Testimonial dot slider
+      if (dots.length > 0) {
+        updateTestimonialSlider();
+        startTestimonialTimer();
+      }
+    }
+  </script>
+
+</body>
+</html>
